@@ -1,0 +1,49 @@
+import random
+from random import randint
+from time import sleep
+
+predictions = [
+    "Absolutely not", "Are you stupid?", "I see that happening", "Oui", "Sí",
+    "You're not welcome", "Did I ask?"
+]
+
+
+def fortune():
+    print("Hello, " + str(name) + ".")
+    sleep(1)
+    user = input("What are you curious about today? ")
+    user = user.upper()
+    print("Interesting. Let me think..")
+    sleep(1)
+    print("...")
+    sleep(1)
+    while user != "QUIT":
+        answer = random.choice(predictions)
+        print(str(answer))
+        again = input(
+            "If that's not all, you can type yes to ask again. Type quit to leave. "
+        )
+        again = again.upper()
+        if again == "YES":
+            new = input("What now? ")
+        else:
+            print("That's not what I asked for. Leave.")
+            break
+
+
+def matthew():
+    print("The M4 is going to break down.")
+    sleep(0.9)
+    print("You will commit to the admissions process.")
+    sleep(0.9)
+    print("We will see you at Boulder.")
+    sleep(0.9)
+    print("Mr. Warren is coming now. Please leave.")
+    sleep(1.5)
+    print("YOU HAVE BEEN BANNED FROM THE FORTUNE TELLER.")
+
+
+print("Welcome to our fortune teller.")
+sleep(1)
+name = input("What is your name? ")
+name = name.upper()
