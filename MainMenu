@@ -1,0 +1,187 @@
+import sys, os, curses
+import time
+from time import sleep
+
+st = 0.04
+def sp(str):
+  for letter in str:
+    sys.stdout.write(letter)
+    sys.stdout.flush()
+    time.sleep(st)
+  print()
+
+def space():
+  print()
+  print()
+
+#RECIPES
+
+
+def breakfast_selection():
+  while True:
+    selection = input("What is your selection? ")
+    selection = selection.upper
+    print()
+    if selection == 'BERRY ACAI BOWL':
+      print()
+      print("BERRY ACAI BOWL")
+      for x in acai_ingredients:
+        print(x)
+      for x in acai_directions:
+        print()
+        print(x)
+    elif selection == 'TRIPLE SEED OATMEAL':
+      print()
+      print("TRIPLE SEED OATMEAL")
+      for x in oatmeal_ingredients:
+        print(x)
+      for x in oatmeal_directions:
+        print()
+        print(x)
+    elif selection == 'THE BEST AVOCADO TOAST':
+      print()
+      print("THE BEST AVOCADO TOAST")
+      for x in avocado_ingredients:
+        print(x)
+      for x in avocado_directions:
+        print()
+        print(x)
+    elif selection == 'OVERNIGHT CHIA PUDDING': 
+      print()
+      print("OVERNIGHT CHIA PUDDING")
+      for x in chia_ingredients:
+        print(x)
+      for x in chia_directions:
+        print()
+        print(x)
+    else:
+        restart = input("Oops, you may have made a spelling error. Press Z to restart: ")
+        if restart.upper() == 'Z':
+          continue
+    break
+
+def lunch_selection():
+  while True:
+    print()
+    selection = input("Which recipe would you like to see? ")
+    selection = selection.upper()
+    if selection == 'POWER BOWL':
+      print()
+      print("POWER BOWL")
+      for x in power_ingredients:
+        print(x)
+      for x in power_directions:
+        print()
+        print(x)
+    elif selection == 'HUMMUS WRAP':
+      print()
+      print("HUMMUS WRAP")
+      for x in hummus_ingredients:
+        print(x)
+      for x in hummus_directions:
+        print()
+        print(x)
+    elif selection == 'CHICKEN PESTO SANDWICH':
+      print()
+      print("CHICKEN PESTO SANDWICH")
+      for x in pesto_ingredients:
+        print(x)
+      for x in pesto_directions:
+        print()
+        print(x)
+    else:
+        restart = input("Oops, you may have made a spelling error. Press Z to restart: ")
+        if restart.upper() == 'Z':
+          continue
+    break
+
+def dinner_selection():
+  while True:
+    print()
+    selection = input("Which recipe would you like to see? ")
+    selection = selection.upper()
+    if selection == 'CHICKEN TERIYAKI BOWL':
+      print()
+      print("CHICKEN TERIYAKI BOWL")
+      for x in teriyaki_ingredients:
+        print(x)
+      for x in teriyaki_directions:
+        print()
+        print(x)
+    elif selection == 'PROTEIN SALAD':
+      print()
+      print("PROTEIN SALAD")
+      for x in salad_ingredients:
+        print(x)
+      for x in salad_directions:
+        print()
+        print(x)
+    elif selection == 'VEGGIE BURGER':
+      print()
+      print("VEGGIE BURGER")
+      for x in burger_ingredients:
+        print(x)
+      for x in burger_directions:
+        print()
+        print(x)
+    else: 
+      restart = input("Oops, you may have made a spelling error. Press Z to restart: ")
+      if restart.upper() == 'Z':
+        continue
+    break
+    
+breakfast = ['Berry Acai Bowl', 'Triple Seed Oatmeal', 'The Best Avocado Toast', 'Overnight Chia Pudding']
+lunch = ['Power Bowl', 'Hummus Wrap', 'Chicken Pesto Sandwich']
+dinner = ['Chicken Teriyaki Bowl', 'Protein Salad', 'Veggie Burger']
+acai_ingredients = ['- 1 packet frozen acai puree', '- 1 frozen banana', '- 1/2 cup berries of choice', ' - 3/4 cup milk or liquid of choice']
+acai_directions = ['- Directions:', '- In a blender, combine the ingredients and blend until smooth. Add more or less liquid depending on preference', '- Top with your favorite fruits, nuts, nut butters, or granola']
+oatmeal_ingredients = ['- 1/2 cup rolled oats', '- 1 cup milk or liquid of choice', '- 1 tbsp chia seeds', '- 1 tbsp flax seeds','- 1 tbsp chia seeds', '- cinnamon (optional)', '- vanilla extract (optional)' ]
+oatmeal_directions = ['- Directions:', '- In a small saucepan, combine the ingredients on med/high heat for 10 minutes or until you reach your desired consistency', '- Top with your favorite fruits or nut butters']
+avocado_ingredients = ['- 1/2 rip avocado', '- 1 slice bread of choice', '- 1 tsp lemon juice', '- seasonings of choice (salt, pepper, garlic powder, etc.', '- egg(optional)']
+avocado_directions = ['- Directions:', '- In a bowl, smash together the avocado, lemon juice, and any seasonings you like', '- Toast bread of choice and top with avocado mixture', '- Add any toppings (I like a sunny side up egg']
+chia_ingredients = ['- 2 tbsp chia seeds', '- 1 cup milk/liquid of choice', '- 1 tsbp maple syrup', '- cinnamon (optional)', '- vanilla extract (optional)' ]
+chia_directions = ['- Directions:', '- Combine ingredients in an airtight container and mix well to separate any clumps of chia seeds', '- Refridgerate for at least 2 hours, preferrably overnight', '- top with your favorite nuts, fruits, or granola']
+power_ingredients = ['- 1/2 lb sweet potato, peeled and cut into chunks', '- 2 cups kale/leafy greens', '- 1/4 cup canned chickpeas, drained and rinsed', '- 2 oz protein of choice (chicken, tofu, etc) cut into chunks', '- 1/4 cup cooked grain of choice (rice, quinoa, lentils, etc...)', '- veggies of choice', '- 1/4 cup tahini', '- 1/4 cup olive oil', '- 2 tablespoons dijon mustard', '- 1 clove garlic, minced', '- 2 tbsp lemon juice', '- salt to taste']
+power_directions = ['- Directions:', '- Preheat oven to 400 degrees', '- (Dressing) In a small bowl, whisk together tahini, olive oil, mustard, lemon juice, garlic, and salt', '- On a sheet tray, roast sweet potato, kale, chickpeas, veggies, and protein for 20-30 minutes in preheated oven (add seasonings and olive oil if desired)', '- Once the ingredients are done roasting, combine them in a bowl on top of cooked grains and top with dressing']
+hummus_ingredients = ['- 1 tortilla (or wrap of choice)', '- 1/4 cup store-bought or homemade hummus', '- 1 cup cabbage, sliced', '- 1/2 cup carrot, sliced', '- 1 oz protein of choice', '- veggies of choice', '- 1 tbsp apple cider vinegar']
+hummus_directions = ['- Directions:', '- In a small bowl, combine cabbage, carrots, and veggies with apple cider vinegar and salt to taste', '- Let sit for 1 hour in the fridge', '- Spread hummus on wrap and layer cabbage, carrots, and veggies with protein', '- Wrap tightly and enjoy!']
+pesto_ingredients = ['- 1 cooked chicken breast, sliced', '- 2 slices sourdough bread', '- 1/4 cup avocado, smashed', '- spinach/leafy greens', '- 1/2 cup olive oil', '- 1 clove garlic', '- 2 tbsp pine nuts', '- 1 cup fresh basil leaves', '- 1/4 cup freshly grated parmesan', '- salt and pepper to taste']
+pesto_directions = ['- Directions:', '- (Pesto) Combine garlic, pine nuts, basil, and parmesan in a food processor. With the motor running, slowly stream in olive oil until emulsified; season with salt and pepper to taste. Set aside.', '- Layer bread, pesto, chicken, spinach/greens, and avocado.', '- (optional) Add sandwich to a saucepan with olive oil until bread becomes golden brown and cripsy', '- Enjoy!']
+teriyaki_ingredients = ['- 4 oz chicken thighs/breasts', '- 1 tbsp olive oil', '- salt and pepper to taste', '- 1/4 cup low sodium soy sauce', '- 2 tbsp brown sugar/sugar-free sweetener', '- 1 tbsp apple cider vinegar', '- 1 clove garlic, minced', '- 1 tsp sesame oil', '- 1/2 tsp grated ginger', '- 1/4 cup water', '- 1 tbsp cornstarch']
+teriyaki_directions = ['- Directions:', '- Cut chicken into one-inch pieces and season with salt and pepper. Heat olive oil in skillet over medium-high heat and add chicken. Cook until done and remove', '- In a small bowl, whisk water and cornstarch together','- In another small bowl, combine soy sauce, brown sugar, vinegar, garlic, sesame oil, ginger, and constarch/water mix', '- Add sauce to skillet and bring to boil. Reduce and stir until it begins to thicken','- Add chicken and toss in sauce until fully coated', '- Serve with brown rice/quinoa and veggies']
+salad_ingredients = ['- 4 oz protein of choice (steak, chicken, tofu, salmon, etc...', '- 1/4 cup olive oil (set aside 1 tbsp)', '- 2 cups greens (kale, romaine, etc...)', '- 1 cup veggies of choice (diced cucumbers, tomatoes, edamame, etc...', '- 1/4 cup balsamic vinegar', '-salt and pepper to taste']
+salad_directions = ['- Directions:','- Grill protein of choice with 1 tbsp olive oil and seasonings of choice. Slice and set aside', '- Make dressing with olive oil, balsamic vinegar, salt and pepper to taste, and water if needed', '- Combine veggies, protein, greens, and dressing; toss until fully mixed', '- Enjoy!']
+burger_ingredients = ['For 8 burger patties: ', '- 8 oz mushrooms', '- 1 carrot', '- 1 cup broccoli', '- 1/2 white onion','- 2 cloves garlic', '- 2 tbsp olive oil', '- 1 can black beans, drained and rinsed', '- 1/4 cup nut of choice', '- fresh herbs', '- 1/2 cup breadcrumbs', '- 2 eggs or flax eggs', '- 1 tbsp tomato paste', '- 3/4 cup cooked rice', '- burger buns and toppings of choice']
+burger_directions = ['- Directions:', '- Heat oven 400 degrees F', '- Roughly chop mushrooms, carrot, broccoli, and onion. Add vegetables into food processor with garlic, olive oil, seasonings of choice', '- Roast for 15 minutes until edges are brown', '- Spread black beans onto baking sheet and roast until dry', '- In a food processor, pulse nuts, spinach, and herbs. Add beans, vegetables, breadcrumbs, eggs, and tomato paste. Pulse until just combined', '- Divide into 8 portions and place patties in a pan heated on medium-low with oil. Cook until brown and heated through (5 minutes each side)', '- Assemble burger with buns, toppings/sauces of choice, and patties', '- Enjoy!']
+
+while True:
+  space()
+  sp("Hello, welcome to the Interactive Cookbook for   healthy recipes!")
+  sleep(0.4)
+  space()
+  sp("In this book, you can find simple and balanced meals that will keep you energized throughout the day.")
+  sleep(0.4)
+  space()
+  print("Do you want to see recipes for breakfast,   lunch, or dinner?")
+  meal = input("Your selection: ")
+  meal = meal.upper()
+  if meal == 'BREAKFAST':
+    for x in breakfast:
+      print()
+      print(x)
+    breakfast_selection()
+  elif meal == 'LUNCH':
+    for x in lunch:
+      print()
+      print(x)
+    lunch_selection()
+  elif meal == 'DINNER':
+    for x in dinner:
+      print()
+      print(x)
+    dinner_selection()
+  else:
+    restart = input("Oops, you may have made a spelling error. Press Z to restart: ")
+    if restart.upper() == 'Z':
+      continue
+  break
